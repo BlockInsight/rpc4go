@@ -14,7 +14,7 @@ import (
 // Client .
 type Client interface {
 	BlockNumber() (int64, error)
-	BlockByNumber(number int64, block interface{}) error
+	BlockByNumber(number int64) (*Block, error)
 	BalanceOf(address string, asset string) (string, error)
 	SendTransaction(data []byte) (string, error)
 }
@@ -49,8 +49,8 @@ func (client *clientImpl) BlockNumber() (int64, error) {
 
 	return val.RawValue.Int64(), nil
 }
-func (client *clientImpl) BlockByNumber(number int64, block interface{}) (err error) {
-	err = client.Call2("eth_getBlockByNumber", block, fmt.Sprintf("0x%x", number), true)
+func (client *clientImpl) BlockByNumber(number int64) (val *Block, err error) {
+	err = client.Call2("eth_getBlockByNumber", &val, fmt.Sprintf("0x%x", number), true)
 
 	return
 }

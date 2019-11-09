@@ -1,6 +1,8 @@
 package eth
 
 import (
+	"reflect"
+
 	"github.com/blockinsight/rpc4go"
 )
 
@@ -12,7 +14,16 @@ func (driver *drvierImpl) BlockNumber() (int64, error) {
 	return driver.client.BlockNumber()
 }
 func (driver *drvierImpl) BlockByNumber(number int64, block interface{}) error {
-	return driver.client.BlockByNumber(number, block)
+
+	result, err := driver.client.BlockByNumber(number)
+
+	if err != nil {
+		return err
+	}
+
+	reflect.ValueOf(block).Elem().Set(reflect.ValueOf(result))
+
+	return nil
 }
 func (driver *drvierImpl) BalanceOf(address string, asset string) (string, error) {
 	return driver.client.BalanceOf(address, asset)

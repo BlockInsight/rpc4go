@@ -3,6 +3,10 @@ github.com/bitly/go-simplejson v0.5.0 h1:6IH+V8/tVMab511d5bn4M7EwGXZf9Hj6i2xSwkN
 github.com/bitly/go-simplejson v0.5.0/go.mod h1:cXHtHw4XUPsvGaxgjIAn8PhEWG9NfngEKAMDJEczWVA=
 github.com/blockinsight/abi4go v0.0.1 h1:lk7P/wwLHGTLDoItjnDmYoJVsoGvzi8xcsK8ynWOVjg=
 github.com/blockinsight/abi4go v0.0.1/go.mod h1:ZkisI3rqVvCvHXY3h1TJVUqMa4gYCZrKUIO/nCcZtEk=
+github.com/blockinsight/model.proto v0.0.0-20191109074016-21be32860072 h1:vZ/YpaZXYm5D+EnPxOizK6HYdrBUbZadh777Jgpifz8=
+github.com/blockinsight/model.proto v0.0.0-20191109074016-21be32860072/go.mod h1:poGFz64xjH0yRNP/s72DT6elW7ZKwjbTI7H063WaPYY=
+github.com/blockinsight/model.proto v0.0.0-20191109080300-604eddf0215f h1:KVYdd2QnkFehq1YUBzMrNfByBCUvpJfTNilse8/Swf4=
+github.com/blockinsight/model.proto v0.0.0-20191109080300-604eddf0215f/go.mod h1:poGFz64xjH0yRNP/s72DT6elW7ZKwjbTI7H063WaPYY=
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 h1:DDGfHa7BWjL4YnC6+E63dPcxHo2sUxDIu8g3QgEJdRY=
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869/go.mod h1:Ekp36dRnpXw/yCqJaO+ZrUyxD+3VXMFFr56k5XYrpB4=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
@@ -14,6 +18,8 @@ github.com/dynamicgo/xerrors v0.0.0-20190219051451-ec7525ce5de1/go.mod h1:ezv9/5
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/ghodss/yaml v1.0.0 h1:wQHKEahhL6wmXdzwWG11gIVCkOv05bNOh+Rxn0yngAk=
 github.com/ghodss/yaml v1.0.0/go.mod h1:4dBDuWmgqj2HViK6kFavaiC9ZROes6MMH2rRYeMEF04=
+github.com/golang/protobuf v1.3.2 h1:6nsPYzhq5kReh6QImI3k5qWzO4PEbvbIW2cwSfR/6xs=
+github.com/golang/protobuf v1.3.2/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/hashicorp/hcl v1.0.0/go.mod h1:E5yfLk+7swimpb2L/Alb/PJmXilQ/rhwaUYs4T20WEQ=
 github.com/imdario/mergo v0.3.8 h1:CGgOkSJeqMRmt0D9XLWExdT4m4F1vd3FV3VPt+0VxkQ=
 github.com/imdario/mergo v0.3.8/go.mod h1:2EnlNZ0deacrJVfApfmtdGgDfMuh/nq6Ok1EcJh5FfA=

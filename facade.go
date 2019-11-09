@@ -20,7 +20,9 @@ var injector sdi4go.Injector
 var once sync.Once
 
 // Driver .
-type Driver func(url string) Client
+type Driver interface {
+	Create(url string) Client
+}
 
 func getInjector() sdi4go.Injector {
 	once.Do(func() {
@@ -55,5 +57,5 @@ func New(driverName string, url string) (Client, error) {
 		return nil, err
 	}
 
-	return driver(url), nil
+	return driver.Create(url), nil
 }

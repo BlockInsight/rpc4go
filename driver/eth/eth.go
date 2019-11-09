@@ -14,9 +14,10 @@ import (
 // Client .
 type Client interface {
 	BlockNumber() (int64, error)
-	BlockByNumber(number int64) (*Block, error)
+	BlockByNumber(number int64, block interface{}) error
 	BalanceOf(address string, asset string) (string, error)
 	SendTransaction(data []byte) (string, error)
+	GetTransactionReceipt(tx string) (val *TransactionReceipt, err error)
 }
 
 type clientImpl struct {
@@ -30,6 +31,14 @@ func New(url string) Client {
 		RPCClient: jsonrpc.NewRPCClient(url),
 		Logger:    slf4go.Get("ethrpc-client"),
 	}
+}
+
+// GetTransactionReceipt ...
+func (client *clientImpl) GetTransactionReceipt(tx string) (val *TransactionReceipt, err error) {
+
+	err = client.Call2("eth_getTransactionReceipt", &val, tx)
+
+	return
 }
 
 func (client *clientImpl) BlockNumber() (int64, error) {
@@ -49,8 +58,8 @@ func (client *clientImpl) BlockNumber() (int64, error) {
 
 	return val.RawValue.Int64(), nil
 }
-func (client *clientImpl) BlockByNumber(number int64) (val *Block, err error) {
-	err = client.Call2("eth_getBlockByNumber", &val, fmt.Sprintf("0x%x", number), true)
+func (client *clientImpl) BlockByNumber(number int64, val interface{}) (err error) {
+	err = client.Call2("eth_getBlockByNumber", val, fmt.Sprintf("0x%x", number), true)
 
 	return
 }

@@ -54,7 +54,7 @@ func New(driverName string, url string) (Client, error) {
 	driver, err := getDriver(driverName)
 
 	if err != nil {
-		return nil, err
+		return nil, errors.Wrap(err, "rpc4go driver %s not found", driverName)
 	}
 
 	return driver.Create(url), nil
